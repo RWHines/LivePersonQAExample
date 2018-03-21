@@ -1,13 +1,13 @@
 ﻿using LivePersonQA.Framework.Pages;
 using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivePersonQA.Framework
 {
+
+    /// <summary>
+    /// Helper class hide direct IWebDriver access from tests
+    /// </summary>
     class WebDriver
     {
         private IWebDriver _webDriver;

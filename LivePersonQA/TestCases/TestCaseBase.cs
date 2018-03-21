@@ -1,10 +1,11 @@
 ﻿using LivePersonQA.Framework;
 using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace LivePersonQA.TestCases
 {
+    /// <summary>
+    /// Base class to initialize WebDriver
+    /// </summary>
     class TestCaseBase
     {
         protected WebDriver Driver;

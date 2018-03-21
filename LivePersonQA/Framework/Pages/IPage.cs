@@ -1,12 +1,10 @@
-﻿using LivePersonQA.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace LivePersonQA.Framework.Pages
 {
+    /// <summary>
+    /// Interface to expose needed methods to WebDriver class for page navigation
+    /// </summary>
     interface IPage
     {
         String GetUrl();

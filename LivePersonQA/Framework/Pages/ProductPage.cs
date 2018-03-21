@@ -1,10 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivePersonQA.Framework.Pages
 {
@@ -22,6 +17,7 @@ namespace LivePersonQA.Framework.Pages
         [FindsBy(How = How.Id, Using = _productDescriptionId)]
         IWebElement ProductDescription;
 
+        //See HomePage.cs for explanation of below constructor
         public ProductPage(WebDriver WebDriver) : base(WebDriver)
         {
             WaitForElements.Add(By.XPath(_productNameXPath));

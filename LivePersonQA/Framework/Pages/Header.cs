@@ -1,13 +1,12 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivePersonQA.Framework.Pages
 {
+    /// <summary>
+    /// Class to hold shared header elements. This would be followed by a footer class for footer elements, but those aren't used in the example tests.
+    /// </summary>
     abstract class Header<T> : PageBase<T>
     {
         const String _searchId = "search_query_top";

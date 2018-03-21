@@ -1,15 +1,11 @@
 ﻿using LivePersonQA.Framework.Pages;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivePersonQA.TestCases
 {
     class ContactUsTestCases : TestCaseBase
     {
+        //Validate field requirements for Test 4
         [Test]
         public void SubmitContactMessage()
         {

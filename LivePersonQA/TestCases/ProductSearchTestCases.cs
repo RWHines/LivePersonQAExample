@@ -2,12 +2,8 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LivePersonQA.TestCases
 {
@@ -15,6 +11,7 @@ namespace LivePersonQA.TestCases
     {
         private String _productPriceClass = "product-price";
 
+        //Count number of search result responses for test 1
         [Test]
         public void ResultsCountSummerDress()
         {
@@ -23,6 +20,7 @@ namespace LivePersonQA.TestCases
             Assert.True(results.Count > 0, "Printed Summer Dress returns 0 search results.");
         }
 
+        //Validate result information for test 2
         [Test]
         public void ResultValidateSummerDress()
         {
@@ -44,6 +42,7 @@ namespace LivePersonQA.TestCases
             return resultsPage.GetResults();
         }
 
+        //Test name, price, and image url
         private void ValidateSearchResult(IWebElement element, int position)
         {
 

@@ -13,6 +13,7 @@ namespace LivePersonQA.Framework.Pages
         IWebElement ResultsGrid;
 
 
+        //See HomePage.cs for explanation of below constructor
         public SearchResultsPage(WebDriver WebDriver) : base(WebDriver)
         {
             WaitForElements.Add(By.Id(_resultsGridId));
@@ -28,6 +29,8 @@ namespace LivePersonQA.Framework.Pages
             return (SearchResultsPage)NavigateToPage(this);
         }
 
+        //Ideally the framework would handle interacting with IWebElements and tests would only see our custom created objects,
+        //but as this is a one-off it seemed excessive to implement that
         public ReadOnlyCollection<IWebElement> GetResults()
         {
             ReadOnlyCollection<IWebElement> results;

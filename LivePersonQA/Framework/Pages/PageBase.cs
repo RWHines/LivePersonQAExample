@@ -1,27 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LivePersonQA.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace LivePersonQA.Framework.Pages
 {
+    /// <summary>
+    /// Base class for all webpages. Implments navigation and element waits to ensure pages load properly. 
+    /// Generics weren't really used at this stage, but would be used later in a more robust framework.
+    /// </summary>
     abstract class PageBase<T> : IPage
     {
         protected WebDriver WebDriver;
-
+        
+        //List of all elements to be checked for to verify a page has loaded, these are added to in a child page's constructor
         protected List<By> WaitForElements = new List<By>();
 
         public PageBase(WebDriver WebDriver)
         {
             this.WebDriver = WebDriver;
             PageFactory.InitElements(WebDriver.GetWebDriver(), this);
-            WaitForPage();
         }
 
         public abstract string GetUrl();
@@ -32,6 +31,7 @@ namespace LivePersonQA.Framework.Pages
             return NavigateToPage(webDriver);
         }
 
+        //Waits for certain elements to be active on page to ensure page load
         protected void WaitForPage()
         {
             WebDriverWait wait = new WebDriverWait(WebDriver.GetWebDriver(), new TimeSpan(0, 0, 10));
@@ -56,6 +56,7 @@ namespace LivePersonQA.Framework.Pages
         }
 
         
+        //Sets webdriver url to page and waits for elements
         public IPage NavigateToPage(IPage page, string pageCode)
         {
             WebDriver.GetWebDriver().Url = String.Format(GetUrl(), pageCode);
